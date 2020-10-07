@@ -12,8 +12,8 @@ public class WhiskyController {
     @Autowired
     WhiskyRepository whiskyRepository;
 
-    @GetMapping(value = "/whiskys")
-    public ResponseEntity getWhiskysByYear(
+    @GetMapping(value = "/whiskies")
+    public ResponseEntity getWhiskiesByYear(
             @RequestParam(name = "year", required = false) Integer year){
         if (year != null){
             return new ResponseEntity<>(whiskyRepository.findWhiskyByYear(year), HttpStatus.OK);
